@@ -4,6 +4,9 @@ public class SwitchClasses
 
 			public static void classSwitch()
 			{
-				System.out.println("Switch Class");
+				for(int i = 0; i < DataBase.students.size(); i++)
+					{
+						System.out.println(DataBase.students.get(i).getFirstName());
+					}
 			}
 	}

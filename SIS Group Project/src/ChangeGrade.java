@@ -1,9 +1,10 @@
-
+import java.io.*;
 public class ChangeGrade
 	{
 
-			public static void gradeChange()
+			public static void gradeChange() 
 			{
-				System.out.println("Change Grade");
+			
+				
 			}
 	}

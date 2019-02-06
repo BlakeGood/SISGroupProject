@@ -68,23 +68,23 @@ public class DataBase
 
 		
 						
-						for(int n = 0; n < students.size(); n++){
-							double Gfinal = (totalPoints + G2 + G3)/3;
-							students.get(n).setGpa(Gfinal);
-							
-						}
-						
-						totalPoints = 0;
-						G2 = 0;
-						G3 = 0;
-					
+//						for(int n = 0; n < students.size(); n++){
+//							double Gfinal = (totalPoints + G2 + G3)/3;
+//							students.get(n).setGpa(Gfinal);
+//							
+//						}
+//						
+//						totalPoints = 0;
+//						G2 = 0;
+//						G3 = 0;
+//					
 				}
 				
 				
-				
-				for(int i = 0; i < students.size(); i++){
-					System.out.println(students.get(i).getFirstName()+students.get(i).getLastName()+students.get(i).getOne()+students.get(i).getOneGrade()+students.get(i).getTwo()+students.get(i).getTwoGrade()+students.get(i).getThree()+students.get(i).getThreeGrade()+students.get(i).getGpa());
-				}
+//				
+//				for(int i = 0; i < students.size(); i++){
+//					System.out.println(students.get(i).getFirstName()+students.get(i).getLastName()+students.get(i).getOne()+students.get(i).getOneGrade()+students.get(i).getTwo()+students.get(i).getTwoGrade()+students.get(i).getThree()+students.get(i).getThreeGrade()+students.get(i).getGpa());
+//				}
 				
 			}
 			
