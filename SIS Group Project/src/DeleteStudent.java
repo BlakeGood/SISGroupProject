@@ -1,9 +1,20 @@
+import java.util.Scanner;
 
 public class DeleteStudent
 	{
 
 			public static void studentDelete()
 			{
-				System.out.println("Delete Student");
+				Scanner userInput = new Scanner(System.in);
+				
+				System.out.println("What student would you like to remove?");
+				
+				//show list of students 
+				
+				int userChoice = userInput.nextInt();
+				
+				
+				
+				
 			}
 	}

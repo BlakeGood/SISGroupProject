@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -6,7 +7,9 @@ import java.util. *;
 public class DataBase 
 	{
 		public	static ArrayList<Student>students = new ArrayList<Student>();
-		
+		public static String grade;
+		public static double totalPoints = 0;
+		public static double totalpoints2 = 0;
 		public static void fillArray() throws IOException
 			{
 				Scanner names = new Scanner(new File("StudentList.txt"));
@@ -18,75 +21,109 @@ public class DataBase
 					
 				}
 				
-				System.out.println(students.size());
-				double totalPoints = 0;
 				
-				////
+				
 				for(int i = 0; i < students.size(); i++){
+					totalPoints = 0;
+					totalpoints2 = 0;
+					grade = students.get(i).getOneGrade();
+					convertGPA();
+					totalpoints2 += totalPoints;
+					grade = students.get(i).getTwoGrade();
+					convertGPA();
+					totalpoints2 += totalPoints;
+					grade = students.get(i).getThreeGrade();
+					convertGPA();
+					totalpoints2 += totalPoints;
+					students.get(i).setGpa(totalpoints2/3);
 					
-						if(students.get(i).getOneGrade().equals("A+")){
-							totalPoints = 4.3;
-						}
-						else if(students.get(i).getOneGrade().equals("A")){
-							totalPoints = 4.0;
-						}
-						else if(students.get(i).getOneGrade().equals("A-")){
-							totalPoints = 3.7;
-						}
-						else if(students.get(i).getOneGrade().equals("B+")){
-							totalPoints = 3.3;
-						}
-						else if(students.get(i).getOneGrade().equals("B")){
-							totalPoints = 3.0;
-						}
-						else if(students.get(i).getOneGrade().equals("B-")){
-							totalPoints = 2.7;
-						}
-						else if(students.get(i).getOneGrade().equals("C+")){
-							totalPoints = 2.3;
-						}
-						else if(students.get(i).getOneGrade().equals("C")){
-							totalPoints = 2;
-						}
-						else if(students.get(i).getOneGrade().equals("C-")){
-							totalPoints = 1.7;
-						}
-						else if(students.get(i).getOneGrade().equals("D+")){
-							totalPoints = 1.3;
-						}
-						else if(students.get(i).getOneGrade().equals("D")){
-							totalPoints = 1.0;
-						}
-						else if(students.get(i).getOneGrade().equals("D-")){
-							totalPoints = 0.7;
-						}
-						else if(students.get(i).getOneGrade().equals("F")){
-							totalPoints = 0.3;
-						}
-						
-						
-
-		
-						
-//						for(int n = 0; n < students.size(); n++){
-//							double Gfinal = (totalPoints + G2 + G3)/3;
-//							students.get(n).setGpa(Gfinal);
-//							
-//						}
-//						
-//						totalPoints = 0;
-//						G2 = 0;
-//						G3 = 0;
-//					
 				}
 				
 				
-//				
-//				for(int i = 0; i < students.size(); i++){
-//					System.out.println(students.get(i).getFirstName()+students.get(i).getLastName()+students.get(i).getOne()+students.get(i).getOneGrade()+students.get(i).getTwo()+students.get(i).getTwoGrade()+students.get(i).getThree()+students.get(i).getThreeGrade()+students.get(i).getGpa());
-//				}
+				
+				for(int i = 0; i < students.size(); i++){
+					System.out.println(students.get(i).getFirstName()+students.get(i).getLastName()+students.get(i).getOne()+students.get(i).getOneGrade()+students.get(i).getTwo()+students.get(i).getTwoGrade()+students.get(i).getThree()+students.get(i).getThreeGrade()+students.get(i).getGpa());
+				}
+				
+			}
+
+	public static double convertGPA()
+			{
+				
+				
+				switch(grade){
+					case "A+":
+							{
+						totalPoints = 4.30;
+						break;
+					}
+					
+					case "A":{
+						totalPoints = 4.00;
+						break;
+					}
+					
+					case "A-":{
+						totalPoints = 3.70;
+						break;
+					}
+					
+					case "B+":{
+						totalPoints = 3.30;
+						break;
+					}
+					
+					case "B":{
+						totalPoints = 3.00;
+						break;
+					}
+					
+					case "B-":{
+						totalPoints = 2.70;
+						break;
+					}
+					
+					case "C+":{
+						totalPoints = 2.30;
+						break;
+					}
+					
+					case "C":{
+						totalPoints = 2.00;
+						break;
+					}
+					
+					case "C-":{
+						totalPoints = 1.70;
+						break;
+					}
+					
+					case "D+":{
+						totalPoints = 1.30;
+						break;
+					}
+					
+					case "D":{
+						totalPoints = 1.00;
+						break;
+					}
+					
+					case "D-":{
+						totalPoints = 0.90;
+						break;
+					}
+					
+					case "F":{
+						totalPoints = 0.00;
+						break;
+					}
+				}
+				return totalPoints;
+				
+				
 				
 			}
 			
 		
 	}
+

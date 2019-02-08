@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 
 import java.util.Scanner;
@@ -7,11 +6,18 @@ import java.util.Scanner;
 public class SISMainMethod
 	{
 
+
+		
+
 		static boolean run = true;
 		public static void main(String[] args) throws IOException
 
 			{
+
 				DataBase.fillArray();
+
+				
+
 				Scanner userInput = new Scanner(System.in);
 				
 				System.out.println("Welcome to Blake, Danny, and Kenny's Student Information System.");
@@ -20,8 +26,14 @@ public class SISMainMethod
 					{
 				System.out.println("What would you like to do?");
 				System.out.println("(1) Add or Delete a Student.");
-				System.out.println("(2) Change Student Grades or Schedules.");
+				System.out.println("(2) Change Student Grades or Schedule.");
 				System.out.println("(3) Sort Students");
+
+				
+				
+				
+				
+
 				int userChoice = userInput.nextInt();
 				
 				if(userChoice == 1)
@@ -104,3 +116,4 @@ public class SISMainMethod
 			}
 
 	}
+
