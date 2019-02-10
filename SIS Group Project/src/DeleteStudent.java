@@ -11,7 +11,8 @@ public class DeleteStudent
 				Roster.roster();
 				int userChoice = userInput.nextInt();
 				
-			
+				System.out.println();
+				System.out.println("Here is your new class list:");
 				DataBase.students.remove(userChoice - 1);
 				
 				Roster.roster();

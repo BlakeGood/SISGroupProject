@@ -14,6 +14,9 @@ public class SwitchClasses
 				String firstClass = DataBase.students.get(userChoice - 1).getOne();
 				String secondClass = DataBase.students.get(userChoice - 1).getTwo();
 				String thirdClass = DataBase.students.get(userChoice - 1).getThree();
+				String firstGrade = DataBase.students.get(userChoice - 1).getOneGrade();
+				String secondGrade = DataBase.students.get(userChoice - 1).getTwoGrade();
+				String thirdGrade = DataBase.students.get(userChoice - 1).getThreeGrade();
 				
 				System.out.println("Which class would you like to switch " + DataBase.students.get(userChoice - 1).getFirstName() + " " + DataBase.students.get(userChoice - 1).getLastName() + " from?");
 				System.out.println("(1) " + DataBase.students.get(userChoice - 1).getOne());
@@ -33,31 +36,43 @@ public class SwitchClasses
 					{
 						DataBase.students.get(userChoice - 1).setOne(secondClass);
 						DataBase.students.get(userChoice - 1).setTwo(firstClass);
+						DataBase.students.get(userChoice - 1).setOneGrade(secondGrade);
+						DataBase.students.get(userChoice - 1).setTwoGrade(thirdGrade);
 					}
 				else if(userClassFrom == 1 && userClassInto == 3)
 					{
 						DataBase.students.get(userChoice - 1).setOne(thirdClass);
 						DataBase.students.get(userChoice - 1).setThree(firstClass);
+						DataBase.students.get(userChoice - 1).setOneGrade(thirdGrade);
+						DataBase.students.get(userChoice - 1).setThreeGrade(firstGrade);
 					}
 				else if(userClassFrom == 2 && userClassInto == 1)
 					{
 						DataBase.students.get(userChoice - 1).setTwo(firstClass);
 						DataBase.students.get(userChoice - 1).setOne(secondClass);
+						DataBase.students.get(userChoice - 1).setTwoGrade(firstGrade);
+						DataBase.students.get(userChoice - 1).setOneGrade(secondGrade);
 					}
 				else if(userClassFrom == 2 && userClassInto == 3)
 					{
 						DataBase.students.get(userChoice - 1).setTwo(thirdClass);
 						DataBase.students.get(userChoice - 1).setThree(secondClass);
+						DataBase.students.get(userChoice - 1).setTwoGrade(thirdGrade);
+						DataBase.students.get(userChoice - 1).setThreeGrade(secondGrade);
 					}
 				else if(userClassFrom == 3 && userClassInto == 1)
 					{
 						DataBase.students.get(userChoice - 1).setThree(firstClass);
 						DataBase.students.get(userChoice - 1).setOne(thirdClass);
+						DataBase.students.get(userChoice - 1).setThreeGrade(firstGrade);
+						DataBase.students.get(userChoice - 1).setOneGrade(thirdGrade);
 					}
-				else if(userClassFrom == 1 && userClassInto == 2)
+				else if(userClassFrom == 3 && userClassInto == 2)
 					{
-						DataBase.students.get(userChoice - 1).setThree(firstClass);
+						DataBase.students.get(userChoice - 1).setThree(secondClass);
 						DataBase.students.get(userChoice - 1).setTwo(thirdClass);
+						DataBase.students.get(userChoice - 1).setThreeGrade(secondGrade);
+						DataBase.students.get(userChoice - 1).setTwoGrade(thirdGrade);
 					}
 				else if(userClassFrom == userClassInto)
 					{
